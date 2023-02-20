@@ -12,6 +12,7 @@ export default function Weather() {
                 className="form-control"
                 type="search"
                 placeholder="Enter a city..."
+                autoFocus="on"
               />
             </div>
             <div className="col-3">
