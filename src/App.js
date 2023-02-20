@@ -6,7 +6,7 @@ export default function App() {
     <div className="App">
       <Weather />
       <footer>
-        This page was coded using React by Rachel Komori and is{" "}
+        This project was coded by Rachel Komori and is{" "}
         <a
           href="https://github.com/raachelkk/react-weather-app"
           target="_blank"

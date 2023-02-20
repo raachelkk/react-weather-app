@@ -1,3 +1,10 @@
 .App {
-  padding: 20px;
+  padding: 20px 50px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.App footer {
+  font-size: 12px;
+  margin-top: 10px;
 }
