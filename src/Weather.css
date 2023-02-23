@@ -21,10 +21,6 @@
   font-size: 16px;
 }
 
-.Weather img {
-  vertical-align: top;
-}
-
 .Weather .temperature {
   font-size: 64px;
   color: #212529;
