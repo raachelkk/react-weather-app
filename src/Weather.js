@@ -16,7 +16,7 @@ export default function Weather(props) {
       condition: response.data.condition.description,
       name: response.data.city,
       date: new Date(response.data.time * 1000),
-      icon: "https://ssl.gstatic.com/onebox/weather/64/cloudy.png",
+      icon: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
     });
   }
 
