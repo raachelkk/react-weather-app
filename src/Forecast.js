@@ -9,16 +9,22 @@ export default function Forecast(props) {
 
   function handleResponse(response) {
     setLoaded(true);
-    setForecast(response.data);
+    setForecast(response.data.daily);
   }
 
   if (loaded) {
     return (
       <div className="Forecast">
         <div className="row">
-          <div className="col">
-            <ForecastDay data={forecast} />
-          </div>
+          {forecast.map(function (dailyForecast, index) {
+            if (index < 5) {
+              return (
+                <div className="col" key={index}>
+                  <ForecastDay data={dailyForecast} />
+                </div>
+              );
+            }
+          })}
         </div>
       </div>
     );
