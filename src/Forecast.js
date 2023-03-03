@@ -16,23 +16,7 @@ export default function Forecast(props) {
     setForecast(response.data.daily);
   }
 
-  if (loaded) {
-    return (
-      <div className="Forecast">
-        <div className="row">
-          {forecast.map(function (dailyForecast, index) {
-            if (index < 5) {
-              return (
-                <div className="col" key={index}>
-                  <ForecastDay data={dailyForecast} />
-                </div>
-              );
-            }
-          })}
-        </div>
-      </div>
-    );
-  } else {
+  function load() {
     let apiKey = "82e2a506b3bf38ccef35bc49eo4bd3at";
     let lon = props.coordinates.longitude;
     let lat = props.coordinates.latitude;
@@ -41,5 +25,27 @@ export default function Forecast(props) {
     axios.get(apiUrl).then(handleResponse);
 
     return null;
+  }
+
+  if (loaded) {
+    return (
+      <div className="Forecast">
+        <div className="row mt-4">
+          {forecast.map(function (dailyForecast, index) {
+            if (index < 5) {
+              return (
+                <div className="col" key={index}>
+                  <ForecastDay data={dailyForecast} />
+                </div>
+              );
+            } else {
+              return null;
+            }
+          })}
+        </div>
+      </div>
+    );
+  } else {
+    return load();
   }
 }
