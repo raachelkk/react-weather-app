@@ -3,6 +3,7 @@ import axios from "axios";
 import "./Weather.css";
 import WeatherInfo from "./WeatherInfo";
 import Forecast from "./Forecast";
+import { Grid } from "react-loader-spinner";
 
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -68,6 +69,6 @@ export default function Weather(props) {
     );
   } else {
     search();
-    return "Loading...";
+    return <Grid color="white" />;
   }
 }
