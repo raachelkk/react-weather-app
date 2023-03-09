@@ -14,7 +14,7 @@
 
 .Weather h1 {
   margin: 20px 0;
-  font-size: 50px;
+  font-size: 40px;
   font-weight: 600;
   color: var(--branding-color);
 }
@@ -45,4 +45,10 @@
 .Weather .humidity,
 .wind {
   color: var(--secondary-color);
+}
+
+@media (max-width: 590px) {
+  .temperature-col {
+    text-align: center;
+  }
 }
